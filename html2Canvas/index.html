@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+    <div id="capture" style="padding: 10px; background: red">
+        <h4 style="color: #000; ">Hello world!</h4>
+    </div>
+<button onclick="takeScreenShot()">click me to display</button>
+
+<canvas id="myCanvas" width="200" height="100">
+    
+</canvas>
+
+<input type="button" id="btnSave2" value="Save PNG 2" />
+
+<script src="./html2canvas.js"></script>
+<script>
+
+function takeScreenShot(){
+    html2canvas(document.querySelector("#capture")).then(canvas => {
+    canvas.id = "canvasID"
+    let img = document.body.appendChild(canvas).toDataURL('image/png')
+    console.log(img);
+    });
+}
+    // let c = document.getElementById('canvasID')
+    // const img  = canvas.toDataURL('image/jpeg')
+
+    // const btnDisplay = document.querySelector("#btnDisplay");
+
+
+    // document.write('<img src="'+img+'"/>');
+</script>
+</body>
+</html>
